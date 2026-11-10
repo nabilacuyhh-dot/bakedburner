@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Baked Burner Bakery & Dessert</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FFF8EF;
+            --cream-dark: #F3E5D5;
+            --espresso: #321B12;
+            --brown: #68432C;
+            --caramel: #D69A59;
+            --text: #3D2A20;
+            --muted: #806B5D;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            padding: 34px 22px 55px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--espresso);
+            color: var(--cream);
+            padding: 42px 25px;
+            border-radius: 22px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(214, 154, 89, 0.35);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 190px;
+            height: 190px;
+            top: -105px;
+            left: -50px;
+        }
+
+        .hero::after {
+            width: 240px;
+            height: 240px;
+            bottom: -160px;
+            right: -65px;
+        }
+
+        .eyebrow {
+            color: var(--caramel);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: var(--caramel);
+        }
+
+        .hero p {
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 13px;
+            color: #E8D7C8;
+        }
+
+        .hero-line {
+            width: 48px;
+            height: 3px;
+            background: var(--caramel);
+            margin: 20px auto 0;
+            border-radius: 10px;
+        }
+
+        /* CATEGORY */
+        .category {
+            margin-bottom: 48px;
+        }
+
+        .category-heading {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .category-number {
+            flex-shrink: 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--caramel);
+            background: var(--espresso);
+            padding: 7px 10px;
+            border-radius: 8px;
+        }
+
+        .category-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(20px, 3vw, 27px);
+            font-weight: 800;
+            color: var(--espresso);
+            line-height: 1.3;
+        }
+
+        .category-rule {
+            height: 1px;
+            background: var(--cream-dark);
+            flex: 1;
+            min-width: 10px;
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .product-card {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid #EAD9C8;
+            border-radius: 17px;
+            box-shadow: 0 5px 18px rgba(50, 27, 18, 0.045);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(50, 27, 18, 0.12);
+        }
+
+        .image-wrap {
+            position: relative;
+            overflow: hidden;
+            background: var(--cream-dark);
+        }
+
+        .product-img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.045);
+        }
+
+        .product-info {
+            padding: 19px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            align-self: flex-start;
+            margin-bottom: 10px;
+            padding: 5px 9px;
+            background: #F8EBDD;
+            color: #805127;
+            border-radius: 5px;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .product-title {
+            font-family: 'Outfit', sans-serif;
+            color: var(--espresso);
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 9px;
+        }
+
+        .product-desc {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 9px;
+            padding-top: 14px;
+            border-top: 1px solid #F0E5DA;
+            margin-top: auto;
+        }
+
+        .price-label {
+            color: #A18B7B;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-tag {
+            font-family: 'Outfit', sans-serif;
+            color: var(--espresso);
+            font-size: 19px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        /* FOOTER */
+        .bottom-note {
+            background: var(--cream-dark);
+            border-radius: 14px;
+            padding: 24px 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .bottom-note h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            color: var(--espresso);
+            margin-bottom: 5px;
+        }
+
+        .bottom-note p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .bottom-note span {
+            color: var(--brown);
+            font-weight: 800;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+            body {
+                padding: 24px 16px 35px;
+            }
+
+            .product-grid {
+                gap: 15px;
+            }
+
+            .product-img {
+                height: 190px;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-title {
+                font-size: 17px;
+            }
+
+            .price-tag {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 18px 12px 28px;
+            }
+
+            .hero {
+                padding: 35px 18px;
+                margin-bottom: 35px;
+                border-radius: 17px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .product-img {
+                height: 155px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-title {
+                font-size: 15px;
+            }
+
+            .product-desc {
+                font-size: 11px;
+            }
+
+            .product-footer {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .price-tag {
+                font-size: 17px;
+            }
+
+            .category {
+                margin-bottom: 35px;
+            }
+
+            .category-heading {
+                gap: 9px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-img {
+                height: 220px;
+            }
+
+            .product-footer {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <section class="hero">
+        <div class="eyebrow">Baked Burner Bakery & Dessert</div>
+        <h1>A Little Bit of <span>Sweetness.</span></h1>
+        <p>Handcrafted treats, rich flavors, and sweet moments made just for you.</p>
+        <div class="hero-line"></div>
+    </section>
+
+    <!-- CATEGORY 1: MOCHI -->
+    <section class="category">
+        <div class="category-heading">
+            <span class="category-number">01</span>
+            <h2 class="category-title">Chewy Mochi & Dubai Series 🍡</h2>
+            <div class="category-rule"></div>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="mochidubai.JPEG" alt="Dubai Chewy Mochi" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">🔥 Best Seller</span>
+                    <h3 class="product-title">Dubai Chewy Mochi</h3>
+                    <p class="product-desc">Mochi cokelat bertekstur chewy dengan isian kunafa renyah dan selai kacang pistachio manis gurih.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 22.000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="ube.JPG" alt="Dubai Chewy Ube Mochi" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">✨ New Release</span>
+                    <h3 class="product-title">Dubai Chewy Ube Mochi</h3>
+                    <p class="product-desc">Mochi rasa ube bertekstur chewy dengan isian kunafa renyah dan selai kacang pistachio manis gurih.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 22.000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="albino.JPEG" alt="Dubai Chewy Dancow Mochi" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">🍨 Special Dessert</span>
+                    <h3 class="product-title">Dubai Chewy Dancow Mochi</h3>
+                    <p class="product-desc">Mochi susu vanila bertekstur chewy dengan isian kunafa renyah dan selai kacang pistachio manis gurih.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 22.000</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CATEGORY 2: COOKIES -->
+    <section class="category">
+        <div class="category-heading">
+            <span class="category-number">02</span>
+            <h2 class="category-title">Soft Cookies 🍪</h2>
+            <div class="category-rule"></div>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="cookiemonster.JPEG" alt="Cookie Monster" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">Soft Cookie</span>
+                    <h3 class="product-title">Cookie Monster</h3>
+                    <p class="product-desc">Soft cookie biru khas dengan isian selai cokelat & keju lembut di dalam.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 10.000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="matcha.JPEG" alt="Matcha Soft Cookie" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">Soft Cookie</span>
+                    <h3 class="product-title">Matcha Soft Cookie</h3>
+                    <p class="product-desc">Soft cookie rasa matcha yang harum dipadu isian cokelat putih dan keju lumer.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 10.000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="redvelvet.JPEG" alt="Red Velvet Soft Cookie" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">Soft Cookie</span>
+                    <h3 class="product-title">Red Velvet Soft Cookie</h3>
+                    <p class="product-desc">Soft cookie rasa red velvet klasik bertekstur renyah di luar dan lembut di dalam.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 10.000</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CATEGORY 3: BROWNIES -->
+    <section class="category">
+        <div class="category-heading">
+            <span class="category-number">03</span>
+            <h2 class="category-title">Fudgy Brownies 🍫</h2>
+            <div class="category-rule"></div>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="browniesori.JPEG" alt="Original Fudgy Brownies" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">Classic</span>
+                    <h3 class="product-title">Original Fudgy Brownies</h3>
+                    <p class="product-desc">Fudgy brownies cokelat pekat khas dengan tampilan shiny crust yang nyokelat banget.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 23.000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="browniescookies.JPEG" alt="Cookie Topping Brownies" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">Special Topping</span>
+                    <h3 class="product-title">Cookie Topping Brownies</h3>
+                    <p class="product-desc">Fudgy brownies dengan taburan renyah cookies crumble di atasnya.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 28.000</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="image-wrap">
+                    <img src="browniesdubai.JPEG" alt="Pistachio Kunafa Brownies" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="badge">Premium Topping</span>
+                    <h3 class="product-title">Pistachio Kunafa Brownies</h3>
+                    <p class="product-desc">Fudgy brownies dengan lelehan pistachio dan topping kunafa garing melimpah.</p>
+                    <div class="product-footer">
+                        <span class="price-label">Price</span>
+                        <span class="price-tag">Rp 40.000</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="bottom-note">
+        <h2>Made to Make You Smile 🤎</h2>
+        <p>A little treat can make your day sweeter.</p>
+        <p><span>Baked Burner Bakery & Dessert</span></p>
+    </section>
+
+</div>
+</body>
+</html>

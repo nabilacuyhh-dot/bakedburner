@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil | Baked Burner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FFF8EF;
+            --cream-dark: #F1E0CE;
+            --espresso: #321B12;
+            --brown: #68432C;
+            --caramel: #D69A59;
+            --muted: #806B5D;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--cream);
+            color: var(--espresso);
+            padding: 30px 18px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero {
+            background: var(--espresso);
+            color: var(--cream);
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: 20px;
+            border-bottom: 5px solid var(--caramel);
+            margin-bottom: 25px;
+        }
+
+        .eyebrow {
+            color: var(--caramel);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .hero h1 {
+            font-size: clamp(26px, 5vw, 38px);
+            line-height: 1.3;
+        }
+
+        .hero p {
+            color: #E8D7C8;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .profile-card {
+            background: var(--white);
+            border: 1px solid #E8D4C0;
+            border-radius: 18px;
+            padding: 27px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(50, 27, 18, 0.05);
+        }
+
+        .section-label {
+            color: #A66D39;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .profile-card h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .profile-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .quote-card {
+            background: var(--cream-dark);
+            border-left: 4px solid var(--caramel);
+            border-radius: 12px;
+            padding: 23px;
+        }
+
+        .quote-card .quote-mark {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            color: var(--brown);
+            line-height: 1;
+        }
+
+        .quote-card p {
+            color: var(--brown);
+            font-size: 13px;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        .signature {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .signature strong {
+            display: block;
+            color: var(--espresso);
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 18px 10px;
+            }
+
+            .hero {
+                padding: 28px 15px;
+            }
+
+            .profile-card {
+                padding: 20px;
+            }
+
+            .profile-card h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<main class="container">
+
+    <header class="hero">
+        <div class="eyebrow">Our Story · Since 2026</div>
+        <h1>Profil Kami — Baked Burner. 🤎</h1>
+        <p>Every dessert has a story. Here's ours.</p>
+    </header>
+
+    <section class="profile-card">
+        <div class="section-label">The Beginning</div>
+        <h2>Berawal dari Sebuah Pilihan</h2>
+
+        <p>
+            Kami berdiri sejak Januari 2026, berawal dari sang owner
+            yang kebingungan mencari nama untuk bisnis kecilnya yang
+            sudah ia tekuni sedari bangku SD dan mulai berkembang
+            di bangku SMP.
+        </p>
+
+        <p>
+            Sang owner akhirnya memutuskan memilih nama
+            <strong>"Baked Burner."</strong> yang berarti pilihan kedua,
+            namun tetap memiliki keterkaitan erat dengan dunia bakery.
+        </p>
+    </section>
+
+    <!-- ABOUT THIS WEBSITE -->
+    <section class="profile-card">
+        <div class="section-label">Website Background</div>
+        <h2>About This Website</h2>
+
+        <p>
+            Website Baked Burner ini dikembangkan sebagai bagian dari
+            proyek tugas akhir ASAS Mata Pelajaran Informatika. Namun, bisnis yang diperkenalkan
+            melalui website ini bukanlah bisnis fiktif yang dibuat
+            hanya untuk keperluan tugas sekolah.
+        </p>
+
+        <p>
+            Baked Burner merupakan bisnis bakery dan dessert nyata
+            yang telah berjalan sejak Januari 2026. Website ini
+            menjadi salah satu media untuk memperkenalkan identitas
+            bisnis, menampilkan produk, serta memberikan informasi
+            dan akses pemesanan kepada pelanggan.
+        </p>
+    </section>
+
+    <section class="quote-card">
+        <div class="quote-mark">“</div>
+        <p>
+            Bukan maksud pernah menjadi orang ketiga, tetapi meski
+            produk dan bisnis kami bukanlah sebuah pilihan utama,
+            saat dipilih kami siap memberikan rasa yang sesuai
+            ekspektasi — bahkan melebihi rasa dari produk pilihan pertama.
+        </p>
+    </section>
+
+    <div class="signature">
+        <strong>Baked Burner Bakery & Dessert</strong>
+        Sweet treats, unforgettable moments. ✨
+    </div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Baked Burner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FFF8EF;
+            --cream-dark: #F1E0CE;
+            --espresso: #321B12;
+            --brown: #68432C;
+            --caramel: #D69A59;
+            --muted: #806B5D;
+            --white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--cream);
+            color: var(--espresso);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: min(100% - 36px, 1000px);
+            margin: 0 auto;
+        }
+
+        /* WELCOME */
+        .welcome {
+            padding: 45px 0 30px;
+        }
+
+        .welcome-card {
+            background: var(--white);
+            border: 1px solid #E8D4C0;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(50, 27, 18, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(
+                90deg,
+                var(--espresso),
+                var(--caramel),
+                var(--espresso)
+            );
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: #9A6637;
+            background: #F8EBDD;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .welcome h1 {
+            font-size: clamp(28px, 5vw, 43px);
+            line-height: 1.25;
+            font-weight: 800;
+            margin-bottom: 13px;
+        }
+
+        .welcome h1 span {
+            color: #B8783D;
+        }
+
+        .welcome p {
+            color: var(--muted);
+            max-width: 580px;
+            margin: 0 auto;
+            font-size: 13px;
+        }
+
+        .welcome-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 11px;
+            margin-top: 24px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 800;
+            transition: 0.2s ease;
+        }
+
+        .button-primary {
+            background: var(--espresso);
+            color: var(--white);
+        }
+
+        .button-primary:hover {
+            background: var(--brown);
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: var(--cream);
+            color: var(--espresso);
+            border: 1px solid #E3CDB7;
+        }
+
+        .button-secondary:hover {
+            background: var(--cream-dark);
+        }
+
+        /* BRAND VALUES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            padding: 10px 0 35px;
+        }
+
+        .feature {
+            background: var(--espresso);
+            color: var(--cream);
+            border-radius: 14px;
+            padding: 21px 14px;
+            text-align: center;
+            border-bottom: 3px solid var(--caramel);
+        }
+
+        .feature-icon {
+            font-size: 25px;
+            margin-bottom: 7px;
+        }
+
+        .feature h3 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .feature p {
+            font-size: 10px;
+            color: #E8D7C8;
+            line-height: 1.7;
+        }
+
+        /* SECTION TITLE */
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 19px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(22px, 4vw, 29px);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: #E4CDB5;
+        }
+
+        /* FEATURED MENU */
+        .featured {
+            padding-bottom: 38px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .featured-card {
+            background: var(--white);
+            border: 1px solid #E8D4C0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 24px rgba(50, 27, 18, 0.1);
+        }
+
+        .featured-card img {
+            display: block;
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            background: var(--cream-dark);
+        }
+
+        .featured-info {
+            padding: 15px;
+        }
+
+        .featured-tag {
+            color: #9A6637;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .featured-info h3 {
+            font-size: 17px;
+            line-height: 1.35;
+            margin: 6px 0;
+        }
+
+        .featured-info p {
+            color: var(--muted);
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        .featured-price {
+            color: var(--brown);
+            font-family: 'Outfit', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        /* BRAND STORY */
+        .story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: center;
+            padding: 25px;
+            margin-bottom: 35px;
+            border-radius: 18px;
+            background: var(--cream-dark);
+        }
+
+        .story-label {
+            color: #9A6637;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        .story h2 {
+            font-size: 26px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .story p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .story-quote {
+            background: var(--espresso);
+            color: var(--cream);
+            padding: 25px 20px;
+            border-radius: 13px;
+            text-align: center;
+        }
+
+        .story-quote .quote-icon {
+            color: var(--caramel);
+            font-size: 27px;
+        }
+
+        .story-quote h3 {
+            font-size: 22px;
+            margin: 6px 0;
+        }
+
+        .story-quote p {
+            color: #E8D7C8;
+            font-size: 11px;
+        }
+
+        /* CLOSING */
+        .closing {
+            background: var(--espresso);
+            color: var(--cream);
+            text-align: center;
+            border-radius: 16px;
+            padding: 28px 18px;
+            margin-bottom: 35px;
+        }
+
+        .closing h2 {
+            font-size: 24px;
+            margin-bottom: 7px;
+        }
+
+        .closing p {
+            color: #E8D7C8;
+            font-size: 12px;
+            margin-bottom: 18px;
+        }
+
+        .closing .button {
+            background: var(--caramel);
+            color: var(--espresso);
+        }
+
+        .closing .button:hover {
+            background: #E7B87F;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: calc(100% - 24px);
+            }
+
+            .welcome {
+                padding-top: 20px;
+            }
+
+            .welcome-card {
+                padding: 30px 16px;
+            }
+
+            .features {
+                gap: 8px;
+            }
+
+            .feature {
+                padding: 15px 7px;
+            }
+
+            .feature h3 {
+                font-size: 12px;
+            }
+
+            .feature p {
+                font-size: 9px;
+            }
+
+            .featured-grid {
+                gap: 10px;
+            }
+
+            .featured-card img {
+                height: 130px;
+            }
+
+            .featured-info {
+                padding: 10px;
+            }
+
+            .featured-info h3 {
+                font-size: 14px;
+            }
+
+            .featured-info p {
+                font-size: 10px;
+            }
+
+            .featured-price {
+                font-size: 15px;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 18px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- WELCOME -->
+        <section class="welcome">
+            <div class="welcome-card">
+                <span class="eyebrow">Welcome to our little bakery</span>
+
+                <h1>Selamat Datang di<br>
+                    <span>Baked Burner.</span> 🍪
+                </h1>
+
+                <p>
+                    Mau Dubai Chewy Mochi, Fudgy Brownies, atau Soft Cookies?
+                    Temukan camilan favoritmu, dibuat untuk menemani
+                    hari-hari manis kamu.
+                </p>
+
+                <div class="welcome-buttons">
+                    <a href="products.html" class="button button-primary">
+                        Explore Our Menu ↗
+                    </a>
+
+                    <a href="form.html" class="button button-secondary">
+                        Order Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features">
+            <article class="feature">
+                <div class="feature-icon">🍪</div>
+                <h3>Sweet Creations</h3>
+                <p>Beragam pilihan dessert untuk setiap selera.</p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">🤎</div>
+                <h3>Made with Love</h3>
+                <p>Rasa manis yang bikin momen lebih berkesan.</p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">✨</div>
+                <h3>Something Special</h3>
+                <p>Temukan camilan favoritmu di setiap gigitan.</p>
+            </article>
+        </section>
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="featured">
+            <div class="section-heading">
+                <h2>Customer Favorites</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="featured-grid">
+
+                <article class="featured-card">
+                    <img src="mochidubai.JPEG" alt="Dubai Chewy Mochi">
+
+                    <div class="featured-info">
+                        <span class="featured-tag">Best Seller 🔥</span>
+                        <h3>Dubai Chewy Mochi</h3>
+                        <p>Chewy mochi dengan isian kunafa renyah dan pistachio.</p>
+                        <div class="featured-price">Rp 22.000</div>
+                    </div>
+                </article>
+
+                <article class="featured-card">
+                    <img src="matcha.JPEG" alt="Matcha Soft Cookie">
+
+                    <div class="featured-info">
+                        <span class="featured-tag">Cookie Favorite</span>
+                        <h3>Matcha Soft Cookie</h3>
+                        <p>Matcha harum dengan isian cokelat putih dan keju.</p>
+                        <div class="featured-price">Rp 10.000</div>
+                    </div>
+                </article>
+
+                <article class="featured-card">
+                    <img src="browniesdubai.JPEG" alt="Pistachio Kunafa Brownies">
+
+                    <div class="featured-info">
+                        <span class="featured-tag">Premium Dessert</span>
+                        <h3>Pistachio Kunafa Brownies</h3>
+                        <p>Brownies cokelat pekat dengan topping pistachio dan kunafa.</p>
+                        <div class="featured-price">Rp 40.000</div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- BRAND STORY -->
+        <section class="story">
+            <div>
+                <div class="story-label">A little about us</div>
+                <h2>Every Treat Has Its Own Story.</h2>
+                <p>
+                    Baked Burner Bakery & Dessert hadir untuk menyajikan
+                    pilihan dessert yang seru, manis, dan penuh karakter.
+                    Dari mochi chewy hingga brownies fudgy, selalu ada
+                    sesuatu yang bisa bikin harimu terasa lebih spesial.
+                </p>
+            </div>
+
+            <div class="story-quote">
+                <div class="quote-icon">✦</div>
+                <h3>Sip. Bite. Smile.</h3>
+                <p>Sweet treats, unforgettable moments.</p>
+            </div>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="closing">
+            <h2>Ready for Something Sweet? 🍫</h2>
+            <p>Temukan menu favoritmu dan pilih dessert yang kamu suka.</p>
+
+            <a href="products.html" class="button">
+                View All Products →
+            </a>
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order | Baked Burner Bakery & Dessert</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FFF8EF;
+            --cream-dark: #F1E0CE;
+            --espresso: #321B12;
+            --brown: #68432C;
+            --caramel: #D69A59;
+            --muted: #806B5D;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--cream);
+            color: var(--espresso);
+            padding: 28px 16px 40px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--brown);
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 18px;
+        }
+
+        .back-link:hover {
+            color: #A66D39;
+        }
+
+        .hero {
+            background: var(--espresso);
+            color: var(--cream);
+            text-align: center;
+            padding: 38px 20px;
+            border-radius: 20px;
+            border-bottom: 5px solid var(--caramel);
+            margin-bottom: 24px;
+        }
+
+        .eyebrow {
+            color: var(--caramel);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 9px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .hero h1 {
+            font-size: clamp(27px, 5vw, 38px);
+            line-height: 1.3;
+        }
+
+        .hero p {
+            color: #E8D7C8;
+            font-size: 12px;
+            margin-top: 9px;
+        }
+
+        .form-card {
+            background: var(--white);
+            border: 1px solid #E8D4C0;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(50, 27, 18, 0.06);
+        }
+
+        .form-heading {
+            margin-bottom: 24px;
+        }
+
+        .form-heading h2 {
+            font-size: 24px;
+        }
+
+        .form-heading p {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-bottom: 19px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: var(--brown);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #DDC8B4;
+            border-radius: 11px;
+            background: #FFFCF8;
+            color: var(--espresso);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--caramel);
+            box-shadow: 0 0 0 3px rgba(214, 154, 89, 0.18);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .required-note {
+            color: var(--muted);
+            font-size: 10px;
+            margin: -4px 0 18px;
+        }
+
+        .order-actions {
+            display: grid;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .submit-btn, .instagram-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .submit-btn {
+            background: var(--espresso);
+            color: var(--cream);
+        }
+
+        .submit-btn:hover {
+            background: var(--brown);
+            transform: translateY(-2px);
+        }
+
+        .instagram-btn {
+            background: var(--caramel);
+            color: var(--espresso);
+        }
+
+        .instagram-btn:hover {
+            background: #E8B879;
+            transform: translateY(-2px);
+        }
+
+        .note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .footer strong {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            color: var(--brown);
+            font-size: 16px;
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 18px 10px 30px;
+            }
+
+            .hero {
+                padding: 30px 15px;
+            }
+
+            .form-card {
+                padding: 21px 16px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<main class="container">
+
+    <a href="products.html" class="back-link">
+        ← Kembali ke Katalog Produk
+    </a>
+
+    <header class="hero">
+        <div class="eyebrow">Freshly Made, Lovingly Baked</div>
+        <h1>Let's Place an Order. 🍪</h1>
+        <p>Sweet treats, unforgettable moments.</p>
+    </header>
+
+    <section class="form-card">
+        <div class="form-heading">
+            <h2>Form Pemesanan 🤎</h2>
+            <p>Isi detail pesananmu. Pesanan akan diteruskan ke WhatsApp Baked Burner.</p>
+        </div>
+
+        <form id="orderForm">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="nama">Nama Pemesan *</label>
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Masukkan nama kamu"
+                        autocomplete="name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telepon">Nomor WhatsApp Pemesan *</label>
+                    <input
+                        type="tel"
+                        id="telepon"
+                        name="telepon"
+                        placeholder="08xxxxxxxxxx"
+                        autocomplete="tel"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="varian">Pilih Varian Produk *</label>
+                    <select id="varian" name="varian" required>
+                        <option value="" disabled selected>-- Pilih produk --</option>
+
+                        <optgroup label="Chewy Mochi & Dubai Series">
+                            <option value="Dubai Chewy Mochi — Rp22.000">
+                                Dubai Chewy Mochi — Rp22.000
+                            </option>
+                            <option value="Dubai Chewy Ube Mochi — Rp22.000">
+                                Dubai Chewy Ube Mochi — Rp22.000
+                            </option>
+                            <option value="Dubai Chewy Dancow Mochi — Rp22.000">
+                                Dubai Chewy Dancow Mochi — Rp22.000
+                            </option>
+                        </optgroup>
+
+                        <optgroup label="Soft Cookies">
+                            <option value="Cookie Monster — Rp10.000">
+                                Cookie Monster — Rp10.000
+                            </option>
+                            <option value="Matcha Soft Cookie — Rp10.000">
+                                Matcha Soft Cookie — Rp10.000
+                            </option>
+                            <option value="Red Velvet Soft Cookie — Rp10.000">
+                                Red Velvet Soft Cookie — Rp10.000
+                            </option>
+                        </optgroup>
+
+                        <optgroup label="Fudgy Brownies">
+                            <option value="Original Fudgy Brownies — Rp23.000">
+                                Original Fudgy Brownies — Rp23.000
+                            </option>
+                            <option value="Cookie Topping Brownies — Rp28.000">
+                                Cookie Topping Brownies — Rp28.000
+                            </option>
+                            <option value="Pistachio Kunafa Brownies — Rp40.000">
+                                Pistachio Kunafa Brownies — Rp40.000
+                            </option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="jumlah">Jumlah Porsi / Pcs *</label>
+                    <input
+                        type="number"
+                        id="jumlah"
+                        name="jumlah"
+                        min="1"
+                        max="1000"
+                        value="1"
+                        required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="catatan">Catatan Tambahan (Opsional)</label>
+                    <textarea
+                        id="catatan"
+                        name="catatan"
+                        placeholder="Contoh: pesanan diambil jam 2 siang, tambah ucapan ulang tahun, dll."></textarea>
+                </div>
+
+            </div>
+
+            <p class="required-note">* Wajib diisi</p>
+
+            <div class="order-actions">
+                <button type="submit" class="submit-btn">
+                    💬 Pesan via WhatsApp
+                </button>
+
+                <a
+                    href="https://www.instagram.com/bakedburner_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="instagram-btn">
+                    📸 Kunjungi Instagram
+                </a>
+            </div>
+
+            <p class="note">
+                WhatsApp akan terbuka dengan detail pesananmu.
+                Periksa kembali, lalu tekan Kirim.
+            </p>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <strong>Baked Burner Bakery &amp; Dessert</strong>
+        Sweet treats, unforgettable moments. 🤎
+    </footer>
+
+</main>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nomorBisnis = "6281387185680";
+
+    const nama = document.getElementById("nama").value.trim();
+    const telepon = document.getElementById("telepon").value.trim();
+    const varian = document.getElementById("varian").value;
+    const jumlah = Number(document.getElementById("jumlah").value);
+    const catatan = document.getElementById("catatan").value.trim();
+
+    if (!nama || !telepon || !varian || !Number.isInteger(jumlah) || jumlah < 1) {
+        alert("Mohon periksa kembali data pesananmu.");
+        return;
+    }
+
+    const pesan = [
+        "Halo Baked Burner! 🤎",
+        "Saya ingin memesan produk berikut:",
+        "",
+        "Nama pemesan: " + nama,
+        "Nomor WhatsApp pemesan: " + telepon,
+        "Produk: " + varian,
+        "Jumlah: " + jumlah + " pcs",
+        "Catatan: " + (catatan || "-"),
+        "",
+        "Mohon konfirmasi ketersediaan dan total pesanan saya. Terima kasih!"
+    ].join("\n");
+
+    const linkWhatsApp =
+        "https://wa.me/" + nomorBisnis +
+        "?text=" + encodeURIComponent(pesan);
+
+    window.open(linkWhatsApp, "_blank");
+});
+</script>
+
+</body>
+</html>

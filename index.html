@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baked Burner Bakery & Dessert</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #fff8ef;
+            color: #3b2118;
+        }
+
+        /* HEADER: tetap menggunakan foto cookies lama */
+        header {
+            background:
+                linear-gradient(
+                    rgba(35, 18, 12, 0.38),
+                    rgba(35, 18, 12, 0.68)
+                ),
+                url('header.JPEG');
+
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            color: #fff8ef;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 6vw, 58px);
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
+        }
+
+        header p {
+            margin-top: 12px;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #3b2118;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 15px 10px;
+            border-bottom: 4px solid #d99a58;
+        }
+
+        nav a {
+            color: #fff8ef;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 17px;
+            border-radius: 30px;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            background-color: #d99a58;
+            color: #3b2118;
+        }
+
+        /* PEMBATAS DEKORATIF */
+        .accent {
+            height: 5px;
+            background: linear-gradient(
+                90deg,
+                #7a3424,
+                #d99a58,
+                #f3d5a5,
+                #d99a58,
+                #7a3424
+            );
+        }
+
+        /* AREA KONTEN */
+        .content {
+            padding: 24px;
+            background-color: #fff8ef;
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            min-height: 550px;
+            border: none;
+            background-color: #fff8ef;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #3b2118;
+            color: #f3d5a5;
+            text-align: center;
+            padding: 24px 15px;
+            font-size: 13px;
+            line-height: 1.8;
+            border-top: 4px solid #d99a58;
+        }
+
+        footer strong {
+            color: #fff8ef;
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                min-height: 230px;
+            }
+
+            nav {
+                gap: 2px;
+            }
+
+            nav a {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .content {
+                padding: 12px;
+            }
+
+            iframe {
+                min-height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>BAKED BURNER</h1>
+        <p>Bakery & Dessert · Made with Love</p>
+    </header>
+
+    <div class="accent"></div>
+
+    <nav>
+        <a href="home.html" target="konten">Home</a>
+        <a href="profil.html" target="konten">Profil</a>
+        <a href="products.html" target="konten">Products</a>
+        <a href="form.html" target="konten">Order</a>
+        <a href="kontak.html" target="konten">Contact</a>
+	<a href="source.html" target="konten">Source</a>
+
+    </nav>
+
+    <main class="content">
+        <iframe
+            src="home.html"
+            name="konten"
+            title="Konten Baked Burner Bakery & Dessert">
+        </iframe>
+    </main>
+
+    <footer>
+        <strong>Baked Burner Bakery & Dessert</strong>
+        <p>Sweet treats, unforgettable moments.</p>
+        <p>&copy; 2026 Baked Burner Bakery & Dessert</p>
+    </footer>
+
+</body>
+</html>

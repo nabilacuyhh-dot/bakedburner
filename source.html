@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Source | Baked Burner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --cream: #FFF8EF;
+    --cream-dark: #F1E0CE;
+    --espresso: #321B12;
+    --brown: #68432C;
+    --caramel: #D69A59;
+    --muted: #806B5D;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 18px;
+    background: var(--cream);
+    color: var(--espresso);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero {
+    background: var(--espresso);
+    color: var(--cream);
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 20px;
+    border-bottom: 5px solid var(--caramel);
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: var(--caramel);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(26px, 5vw, 38px);
+    margin: 8px 0;
+}
+
+.hero p {
+    color: #E8D4C0;
+    font-size: 13px;
+    margin: 0;
+}
+
+.intro {
+    background: var(--white);
+    border: 1px solid #E8D4C0;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 15px rgba(50, 27, 18, 0.04);
+}
+
+.intro p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 8px 0 0;
+}
+
+.section-label {
+    color: #A66D39;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.source-card {
+    background: var(--white);
+    border: 1px solid #E8D4C0;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 15px rgba(50, 27, 18, 0.04);
+}
+
+.source-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: var(--cream-dark);
+    display: block;
+    margin-bottom: 18px;
+}
+
+.source-card h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 21px;
+    margin: 5px 0;
+    color: var(--espresso);
+}
+
+.source-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 7px 0 12px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--cream-dark);
+    color: var(--brown);
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Header tetap sendiri di atas */
+.header-card img {
+    height: 300px;
+}
+
+/* Grid khusus 9 foto produk */
+.source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.source-grid .source-card {
+    padding: 14px;
+    margin-bottom: 0;
+}
+
+.source-grid .source-card img {
+    height: 160px;
+    margin-bottom: 12px;
+}
+
+.source-grid .source-card h2 {
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.source-grid .source-card p {
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.source-grid .section-label {
+    font-size: 9px;
+}
+
+.source-grid .tag {
+    font-size: 9px;
+}
+
+.footer-note {
+    background: var(--cream-dark);
+    border-left: 4px solid var(--caramel);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.footer-note p {
+    color: var(--brown);
+    font-size: 12px;
+    margin: 5px 0 0;
+}
+
+@media (max-width: 650px) {
+    .source-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .source-grid .source-card img {
+        height: 130px;
+    }
+
+    .source-grid .source-card {
+        padding: 11px;
+    }
+
+    .source-grid .source-card h2 {
+        font-size: 15px;
+    }
+
+    .header-card img {
+        height: 200px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <header class="hero">
+        <div class="eyebrow">Dokumentasi Visual · Baked Burner</div>
+        <h1>Source</h1>
+        <p>Kenalan lebih dekat dengan foto dan visual yang ada di website ini.</p>
+    </header>
+
+    <section class="intro">
+        <div class="section-label">Tentang Gambar</div>
+        <p>
+            Foto-foto produk yang ditampilkan di website ini sebagian besar berasal
+            dari dokumentasi Baked Burner sendiri. Ada juga beberapa gambar yang
+            diedit dengan bantuan Google Gemini untuk menampilkan variasi produk
+            lainnya. Jadi, foto dasarnya tetap berasal dari dokumentasi asli,
+            tetapi tampilannya sudah disesuaikan menggunakan AI.
+        </p>
+    </section>
+
+    <!-- HEADER -->
+    <section class="source-card header-card">
+        <div class="section-label">01 · Visual Website</div>
+        <img src="header.JPEG" alt="Header Baked Burner">
+        <h2>Header Website</h2>
+        <p>
+            Gambar header merupakan dokumentasi asli bakedburner namun ada tambahan bantuan AI untuk menyesuaikan warna
+            agar lebih cocok dengan tema dan identitas visual Baked Burner.
+        </p>
+        <span class="tag">DIEDIT DENGAN BANTUAN AI</span>
+    </section>
+
+    <!-- 9 FOTO PRODUK -->
+    <div class="source-grid">
+
+        <section class="source-card">
+            <div class="section-label">02 · Dokumentasi Produk</div>
+            <img src="mochidubai.JPEG" alt="Dubai Chewy Mochi">
+            <h2>Dubai Chewy Mochi</h2>
+            <p>
+                Foto ini merupakan dokumentasi asli produk Dubai Chewy Mochi
+                yang dibuat oleh Baked Burner.
+            </p>
+            <span class="tag">FOTO ASLI</span>
+        </section>
+
+        <section class="source-card">
+            <div class="section-label">03 · Dokumentasi Produk</div>
+            <img src="ube.JPG" alt="Dubai Chewy Ube Mochi">
+            <h2>Dubai Chewy Ube Mochi</h2>
+            <p>
+                Visual varian Ube Mochi menggunakan foto produk sebagai dasar.
+                Jika terdapat penyesuaian tampilan untuk mengubah variant, pengeditannya dibantu
+                menggunakan Google Gemini.
+            </p>
+            <span class="tag">FOTO / VISUALISASI VARIAN</span>
+        </section>
+
+        <section class="source-card">
+            <div class="section-label">04 · Dokumentasi Produk</div>
+            <img src="albino.JPEG" alt="Dubai Chewy Dancow Mochi">
+            <h2>Dubai Chewy Dancow Mochi</h2>
+            <p>
+                 Visual varian Dancow Mochi menggunakan foto produk sebagai dasar.
+                Jika terdapat penyesuaian tampilan untuk mengubah variant, pengeditannya dibantu
+                menggunakan Google Gemini.
+            </p>
+            <span class="tag">FOTO / VISUALISASI VARIAN</span>
+        </section>
+
+        <section class="source-card">
+            <div class="section-label">05 · Dokumentasi Produk</div>
+            <img src="cookiemonster.JPEG" alt="Cookie Monster">
+            <h2>Cookie Monster</h2>
+            <p>
+                Foto Cookie Monster merupakan dokumentasi produk asli
+                Baked Burner.
+            </p>
+            <span class="tag">FOTO ASLI</span>
+        </section>
+
+        <section class="source-card">
+            <div class="section-label">06 · Dokumentasi Produk</div>
+            <img src="matcha.JPEG" alt="Matcha Soft Cookie">
+            <h2>Matcha Soft Cookie</h2>
+            <p>
+                Foto Matcha Soft Cookie diambil dari dokumentasi produk
+                Baked Burner.
+            </p>
+            <span class="tag">FOTO ASLI</span>
+        </section>
+
+        <section class="source-card">
+            <div class="section-label">07 · Dokumentasi Produk</div>
+            <img src="redvelvet.JPEG" alt="Red Velvet Soft Cookie">
+            <h2>Red Velvet Soft Cookie</h2>
+            <p>
+                Foto ini merupakan dokumentasi asli Red Velvet Soft Cookie
+                milik Baked Burner.
+            </p>
+            <span class="tag">FOTO ASLI</span>
+        </section>
+
+        <section class="source-card">
+            <div class="section-label">08 · Dokumentasi Produk</div>
+            <img src="browniesori.JPEG" alt="Original Fudgy Brownies">
+            <h2>Original Fudgy Brownies</h2>
+            <p>
+                Foto Original Fudgy Brownies berasal dari dokumentasi
+                produk Baked Burner.
+            </p>
+            <span class="tag">FOTO ASLI</span>
+        </section>
+
+        <section class="source-card">
+            <div class="section-label">09 · Dokumentasi Produk</div>
+            <img src="browniescookies.JPEG" alt="Cookie Topping Brownies">
+            <h2>Cookie Topping Brownies</h2>
+            <p>
+                Foto Cookie Topping Brownies merupakan dokumentasi
+                produk asli Baked Burner.
+            </p>
+            <span class="tag">FOTO ASLI</span>
+        </section>
+
+        <section class="source-card">
+            <div class="section-label">10 · Dokumentasi Produk</div>
+            <img src="browniesdubai.JPEG" alt="Pistachio Kunafa Brownies">
+            <h2>Pistachio Kunafa Brownies</h2>
+            <p>
+                 Foto Pistachio Kunafa Brownies merupakan dokumentasi
+                produk asli Baked Burner.
+            </p>
+            <span class="tag">FOTO ASLI</span>
+        </section>
+
+    </div>
+
+    <div class="footer-note">
+        <div class="section-label">Catatan</div>
+        <p>
+            Penggunaan AI hanya untuk membantu penyesuaian atau visualisasi
+            gambar tertentu. Dokumentasi produk tetap berasal dari Baked Burner.
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
